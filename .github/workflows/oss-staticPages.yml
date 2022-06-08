@@ -1,13 +1,10 @@
-on:
-  issue_comment:
-    types:
-      - created
+on: [ push, pull_request ]
 
 name: Static page
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event.comment.body == '/page' }}
+    #if: ${{ github.event.comment.body == '/page' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
