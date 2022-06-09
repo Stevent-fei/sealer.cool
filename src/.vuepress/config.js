@@ -209,11 +209,15 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
-    [
-      '@vuepress/google-analytics',
-      {
-        'ga': 'G-5RZSTDS7KT'
-      }
-    ]
-  ]
+  ],
+
+  head: [ ['script', {}, `
+        var _hmt = _hmt || []; 
+        (function() { 
+        var hm = document.createElement("script"); 
+        hm.src = "https://www.googletagmanager.com/gtag/js?id=G-5RZSTDS7KT"; 
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s); 
+        })(); 
+    `]]
 }
